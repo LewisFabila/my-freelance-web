@@ -1,0 +1,96 @@
+:root{
+    --amarillo: #ffe556;
+    --azul: #508cc8;
+    --oscuro: #303539;
+    --rojo: #c8412d;
+    --blanco: #e1ebed;
+}
+
+/* HTML y BODY with modifier to easily use the "rem" measure. */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* Apply a natural box layout model to all elements, but allowing components to change */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+.titulo span{
+    font-size: 2rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    /* Same code, different syntax. Order of clock hands.
+    margin-top: 0;
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+
+    margin: 0 auto 0 auto;
+    */
+    margin: 0 auto
+}
+
+.nav-background{
+    background-color: var(--azul);
+}
+
+.navegacion-superior{
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion-superior a{
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .navegacion-superior{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-superior a:hover{
+    background-color: var(--amarillo);
+    color: var(--oscuro);
+    transition: .3s;
+}
+
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+
+.contenido-hero{
+    position: absolute;
+    /* Previous option for opacity.
+    background-color: rgba(0,0,0,.6);
+    */
+    background-color: rgb(0 0 0 / 60%);
+    width: 100%;
+    height: 100%;
+    color: var(--blanco);
+}

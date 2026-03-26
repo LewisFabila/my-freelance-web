@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Jura:wght@300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/styles.css" as="style"> 
+    <link rel="stylesheet" href="css/styles.css">
     <title>Diseñador Freelancer</title>
 </head>
 <body>
 
     <header>
-        <h1>Jorge Luis Fabila Freelancer</h1>
+        <h1 class="titulo">Jorge Luis Fabila <span>Freelancer</span></h1>
     </header>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#clientes">Clientes</a>
-        <a href="#contactos">Contactos</a>
-    </nav>
+    <div class="nav-background">
+        <nav class="navegacion-superior contenedor">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contactos">Contactos</a>
+        </nav>
+    </div>
 
-    <section>
-        <h2>Diseño y Desarrollo Web Freelancer</h2>
-        <p>
+    <section class="hero">
+        <div class="contenido-hero">
+            <h2 class="titulo">Diseño y Desarrollo Web <span>Freelancer</span></h2>
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
                 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
             </svg>
-        </p>
-        <p>Cuernavaca, Morelos</p>
-        <a href="#">Contactar</a>
+            <p>Cuernavaca, Morelos</p>
+            <a href="#">Contactar</a>
+        </div>
     </section>
 
     <main>
@@ -83,7 +92,7 @@
                     <textarea></textarea>
                 </div>
                 <div>
-                    <button type="submit" value="Enviar"></button>
+                    <button type="submit" value="Enviar">Enviar</button>
                 </div>
             </fieldset>
         </form>
