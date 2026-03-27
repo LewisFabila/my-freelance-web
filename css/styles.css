@@ -4,12 +4,23 @@
     --oscuro: #303539;
     --rojo: #c8412d;
     --blanco: #e1ebed;
+    --blancoPuro: #fff;
+    --grisAzulado: #dfe9f3;
 }
 
+/* GLOBAL */
 /* HTML y BODY with modifier to easily use the "rem" measure. */
 html{
     font-size: 62.5%;
-    box-sizing: border-box; /* Apply a natural box layout model to all elements, but allowing components to change */
+    box-sizing: border-box; /* Apply a natural box layout model to all elements, but allowing components to change. */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* Smooth transition between sections. */
+}
+
+/* Scroll Snap */
+.servicios, .navegacion-superior, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 *, *:before, *:after {
@@ -20,17 +31,77 @@ body{
     font-size: 16px; /* 1rem = 10px */
     font-family: "Days One", sans-serif;
     font-weight: 400;
+    background-image: linear-gradient(to top, var(--grisAzulado) 0%, var(--blancoPuro) 75%);
 }
 
-.titulo{
+.sombra{
+    -webkit-box-shadow: 0px 6px 15px 4px rgba(0,0,0,0.3); 
+    box-shadow: 0px 6px 15px 4px rgba(0,0,0,0.3);
+    background-color: var(--blancoPuro);
+    padding: 2.5rem;
+    border-radius: 2rem;
+}
+
+.boton{
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--azul);
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    transition: .3s;
+    text-transform: uppercase;
     text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    background-color: var(--amarillo);
+    color: var(--oscuro);
+    transition: .3s;
+    cursor: pointer;
+}
+
+/* TYPOGRAPHY */
+h1{
     font-size: 3.8rem;
 }
 
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
+/* TITLES */
 .titulo span{
     font-size: 2rem;
 }
 
+/* UTILITIES */
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* MAIN NAVIGATION */
 .contenedor{
     max-width: 120rem;
     /* Same code, different syntax. Order of clock hands.
@@ -76,12 +147,14 @@ body{
     transition: .3s;
 }
 
+/* HERO */
 .hero{
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-hero{
@@ -92,5 +165,121 @@ body{
     background-color: rgb(0 0 0 / 60%);
     width: 100%;
     height: 100%;
+    /* A way to center content: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
     color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+/* SERVICES */
+
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 4rem;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--azul);
+}
+
+.servicio p{
+    line-height: 2rem;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--amarillo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .3s;
+}
+
+.servicio .iconos:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+/* FORM */
+.formulario{
+    background-color: var(--oscuro);
+    color: var(--blanco);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    color: var(--amarillo);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+        column-gap: 2rem;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+        grid-column: 1 / 3;
+    }
+}
+
+.campo{
+    margin-bottom: 1.5rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: none;
+}
+
+.campo textarea{
+    height: 20rem;
+    resize: vertical;
+}
+
+.footer{
+    text-align: center;
+    color: var(--oscuro);
 }
